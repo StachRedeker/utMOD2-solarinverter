@@ -1,5 +1,5 @@
 int PWMPin = 13; //pin D7 on an ESP8266
-int PWMfrequency = 20000;  // in Hz
+int PWMfrequency = 10000;  // in Hz
 
 void setup() {
 
