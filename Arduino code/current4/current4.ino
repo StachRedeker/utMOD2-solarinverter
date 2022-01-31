@@ -22,8 +22,8 @@ void loop() {
   float current;
 
   // print the voltage output of the sensor
-  //Serial.print("Voltage: ");
-  //Serial.println(sensorVoltage ,3);
+  Serial.print("Voltage: ");
+  Serial.println(sensorVoltage ,3);
 
   current = ((sensorVoltage - zeroPoint)/resolution);
   Serial.println(current);
@@ -37,7 +37,7 @@ float get_voltage(int n_datapoints)
 
   for(int i=0; i < n_datapoints; i++)
   {
-    voltage = voltage + analogRead(A0) * (5.0 / 1023.0);
+    voltage = voltage + analogRead(A1) * (5.0 / 1023.0);
   }
 
   voltage = voltage/n_datapoints;

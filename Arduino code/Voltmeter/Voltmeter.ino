@@ -5,10 +5,10 @@ float voltage1; // first voltage readout
 float voltage2; // second voltage readout
 
 // voltage devider values
-float v1_R1 = 47000.0; // measure across this one (A0)
-float v1_R2 = 33000.0;
-float v2_R1 = 47000.0; // measure across this one (A1)
-float v2_R2 = 33000.0;
+float v1_R2 = 10000.0; // measure across this one (A0)
+float v1_R1 = 50000.0;
+float v2_R1 = 1000.0; // measure across this one (A1)
+float v2_R2 = 49000.0;
 
 void setup(){
   Serial.begin(9600); //start serial connection

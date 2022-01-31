@@ -1,28 +1,30 @@
 //********************************//
-//*** MPPT SYSTEM ***//
+//********** MPPT SYSTEM *********//
+//************* v1.2 *************//
 //********************************//
 
-// Locations of the current sensors and voltage dividers //
+// Locations of the current sensors, voltage dividers, and other important pins //
 const byte locationCurrentIn = A0;
 const byte locationCurrentOut = A1;
 const byte locationVoltageIn = A2;
-const byte locationVoltageOut = A3;
-int PWMPin = 13; //D7 on an ESP8266
+const byte locationVoltageOut = A4;
+int PWMPin = 6;
 
 // Resolution of the current sensors //
 float resolutionIn = 0.1838966;
-float resolutionOut = 0.18; // TBD
+float resolutionOut = 0.1836130;
 
 // Voltage devider values //
-float Vin_R1 = 5000.0;
-float Vin_R2 = 7500.0;
-float Vout_R1 = 2000.0;
-float Vout_R2 = 5000.0;
+float Vin_R1 = 10000;
+float Vin_R2 = 1200;
+float Vout_R1 = 10000;
+float Vout_R2 = 1200;
 
 // Other global variables that can be changed //
 float resolution = 5.0/1024; // resolution of the ADC of the microcontroller/microcomputer
 float STEP_SIZE = 0.1; // step size (= precision) of the MPPT algorithm
-int PWMfrequency = 10000; // PWM frequency of the signal to the boost converter in [Hz]
+float MAX_VOLTAGE = 30.0;
+float MIN_VOLTAGE = 10.0;
 
 // Other global variables that cannot be changed //
 float zeroPointIn; // zero point of the current sensor before the boost converter
@@ -31,7 +33,8 @@ float zeroPointOut; // zero point of the current sensor after the boost converte
 void setup() {
   Serial.begin(9600);
 
-  analogWriteFreq(PWMfrequency);
+  // Set PWM frequency for D5 and D6 to 62 [kHz]
+  TCCR0B = TCCR0B & B11111000 | B00000001;
 
   // Automatic Calibration Process for current sensors //
   // This calibration assumes that the resolution of the ACS712 stays the same, but the voltage readout for 0 [A] fluctuates //
@@ -67,7 +70,8 @@ void loop() {
 
   currentIn = ((sensorVoltage - zeroPointIn)/resolutionIn);
   Serial.print("currentIn = ");
-  Serial.println(currentIn);
+  Serial.print(currentIn);
+  Serial.println(" [A]");
 
   ///** CURRENT OUT **///
   // ask for an average sensor voltage of 100 measurments
@@ -79,10 +83,11 @@ void loop() {
 
   currentOut = ((sensorVoltage - zeroPointOut)/resolutionOut);
   Serial.print("currentOut = ");
-  Serial.println(currentOut);  
+  Serial.print(currentOut);  
+  Serial.println(" [A]");
 
   ///** VOLTAGES **///
-    // read  voltage from analog pins
+  // read  voltage from analog pins
   VinRead = analogRead(locationVoltageIn);
   VoutRead = analogRead(locationVoltageOut);
 
@@ -92,19 +97,24 @@ void loop() {
 
   // print voltages
   Serial.print("VoltageIn = ");
-  Serial.println(voltageIn);
+  Serial.print(voltageIn);
+  Serial.println(" [V]");
   Serial.print("VoltageOut = ");
-  Serial.println(voltageOut);
+  Serial.print(voltageOut);
+  Serial.println(" [V]");
 
   ///** Obtain the needed duty cycle for the boost converter using the perturb and observe algortihm **///
   dutyCycle = perturbAndObserve(voltageIn, voltageOut, currentIn, currentOut); // THIS IS A PERCENTAGE!
   Serial.print("DC = ");
   Serial.print(dutyCycle);
-  Serial.println(" %");
+  Serial.println(" [%]");
 
   ///** Set the duty cycle of the boost converter to the desired frequency **///
   if (dutyCycle >= 0 && dutyCycle <= 100) {
-    analogWrite(PWMPin, (dutyCycle/100 * 1024));
+    analogWrite(PWMPin, (dutyCycle/100 * 255));
+  }
+  else {
+    analogWrite(PWMPin, (50/100 * 255));
   }
 
   delay(500);
@@ -165,11 +175,24 @@ float perturbAndObserve(float Vin_new, float Vout, float Iin, float Iout) {
 //    Serial.println(DC);
    
     eff = (Pin_new - Pout)/Pin_new *100;
-    Serial.print("eff:");
-    Serial.println(eff);
+    Serial.print("eff: ");
+    Serial.print(eff);
+    Serial.println(" [%]");
     
     Vin_old = Vin_new;
     Pin_old = Pin_new;
+
+    //** SOME SAFETY CHECKS THAT MAY OVERWRITE THE FINAL VALUE FOR DC **//
+    if(Vout >= MAX_VOLTAGE)
+    {
+      DC = DC - 2*STEP_SIZE;
+      Serial.println("MAX VOLTAGE REACHED!!");
+    }
+//    if(Vout <= MIN_VOLTAGE)
+//    {
+//      DC = DC + 2*STEP_SIZE;
+//      Serial.println("MIN VOLTAGE REACHED!!");
+//    }
 
     return DC;
 }
