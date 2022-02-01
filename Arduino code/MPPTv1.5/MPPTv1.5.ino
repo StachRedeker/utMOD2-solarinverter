@@ -150,7 +150,8 @@ float get_voltage(int n_datapoints, const byte pin)
 }
 
 ///* MPPT perturb and observe algorithm *///
-void perturbAndObserve(float Vin_new, float Vout, float Iin, float Iout) {
+void perturbAndObserve(float Vin_new, float Vout_new, float Iin, float Iout) 
+  {
     float eff;
     
     float Pout_new = Vout_new*Iout;
@@ -186,7 +187,7 @@ void perturbAndObserve(float Vin_new, float Vout, float Iin, float Iout) {
             }
         }else
         {
-            if(Vout_new < Vout_old)
+            if(Vout_new > Vout_old)
             {
                 DC = DC - STEP_SIZE;
             }else
