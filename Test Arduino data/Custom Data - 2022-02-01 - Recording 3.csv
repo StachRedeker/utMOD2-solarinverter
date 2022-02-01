@@ -1,0 +1,423 @@
+﻿#!,Workbook:,Custom,Custom
+#!,To play this data back: Open the original Excel workbook file then click the *Import Data File* button in the *Data Streamer* ribbon and navigate to this file.
+#!,For more information visit http://aka.ms/hackingstem/
+DC = 72.20 currentIn = 0.76 currentOut = 0.05 VoltageIn = 14.31 VoltageOut = 38.14 Pout_new = 1.99
+ Pin = 10.81
+ eff = 18.38
+DC = 72.30 currentIn = 0.76 currentOut = 0.04 VoltageIn = 14.26 VoltageOut = 38.19 Pout_new = 1.67
+ Pin = 10.79
+ eff = 15.52
+DC = 72.20 currentIn = 0.74 currentOut = 0.05 VoltageIn = 14.04 VoltageOut = 37.92 Pout_new = 1.73
+ Pin = 10.43
+ eff = 16.62
+DC = 72.30 currentIn = 0.76 currentOut = 0.04 VoltageIn = 14.17 VoltageOut = 37.64 Pout_new = 1.55
+ Pin = 10.84
+ eff = 14.31
+DC = 72.20 currentIn = 0.75 currentOut = 0.04 VoltageIn = 14.13 VoltageOut = 37.55 Pout_new = 1.69
+ Pin = 10.66
+ eff = 15.82
+DC = 72.30 currentIn = 0.76 currentOut = 0.04 VoltageIn = 14.13 VoltageOut = 37.46 Pout_new = 1.63
+ Pin = 10.70
+ eff = 15.26
+DC = 72.20 currentIn = 0.75 currentOut = 0.04 VoltageIn = 14.13 VoltageOut = 37.64 Pout_new = 1.55
+ Pin = 10.59
+ eff = 14.65
+DC = 72.10 currentIn = 0.75 currentOut = 0.05 VoltageIn = 14.13 VoltageOut = 37.46 Pout_new = 2.00
+ Pin = 10.59
+ eff = 18.91
+DC = 72.20 currentIn = 0.75 currentOut = 0.05 VoltageIn = 14.22 VoltageOut = 37.83 Pout_new = 2.04
+ Pin = 10.65
+ eff = 19.16
+DC = 72.30 currentIn = 0.76 currentOut = 0.04 VoltageIn = 14.04 VoltageOut = 37.78 Pout_new = 1.66
+ Pin = 10.65
+ eff = 15.56
+DC = 72.40 currentIn = 0.76 currentOut = 0.05 VoltageIn = 14.13 VoltageOut = 37.55 Pout_new = 1.77
+ Pin = 10.74
+ eff = 16.45
+DC = 72.30 currentIn = 0.75 currentOut = 0.05 VoltageIn = 14.13 VoltageOut = 37.55 Pout_new = 1.71
+ Pin = 10.62
+ eff = 16.07
+DC = 72.40 currentIn = 0.76 currentOut = 0.04 VoltageIn = 14.17 VoltageOut = 37.46 Pout_new = 1.65
+ Pin = 10.73
+ eff = 15.40
+DC = 72.30 currentIn = 0.75 currentOut = 0.05 VoltageIn = 14.04 VoltageOut = 37.60 Pout_new = 1.93
+ Pin = 10.55
+ eff = 18.28
+DC = 72.20 currentIn = 0.75 currentOut = 0.04 VoltageIn = 14.04 VoltageOut = 37.46 Pout_new = 1.63
+ Pin = 10.55
+ eff = 15.48
+DC = 72.30 currentIn = 0.75 currentOut = 0.04 VoltageIn = 13.99 VoltageOut = 37.51 Pout_new = 1.56
+ Pin = 10.44
+ eff = 14.90
+DC = 72.20 currentIn = 0.75 currentOut = 0.05 VoltageIn = 14.08 VoltageOut = 37.37 Pout_new = 1.71
+ Pin = 10.58
+ eff = 16.15
+DC = 72.10 currentIn = 0.75 currentOut = 0.05 VoltageIn = 14.13 VoltageOut = 37.32 Pout_new = 1.95
+ Pin = 10.63
+ eff = 18.39
+DC = 72.00 currentIn = 0.75 currentOut = 0.05 VoltageIn = 14.22 VoltageOut = 37.55 Pout_new = 2.03
+ Pin = 10.62
+ eff = 19.09
+DC = 71.90 currentIn = 0.76 currentOut = 0.05 VoltageIn = 14.17 VoltageOut = 37.60 Pout_new = 1.94
+ Pin = 10.71
+ eff = 18.10
+DC = 72.00 currentIn = 0.76 currentOut = 0.05 VoltageIn = 14.26 VoltageOut = 37.92 Pout_new = 2.07
+ Pin = 10.77
+ eff = 19.18
+DC = 72.10 currentIn = 0.76 currentOut = 0.06 VoltageIn = 14.26 VoltageOut = 37.83 Pout_new = 2.32
+ Pin = 10.86
+ eff = 21.39
+DC = 72.00 currentIn = 0.76 currentOut = 0.06 VoltageIn = 14.31 VoltageOut = 37.87 Pout_new = 2.11
+ Pin = 10.90
+ eff = 19.40
+DC = 72.10 currentIn = 0.76 currentOut = 0.06 VoltageIn = 14.26 VoltageOut = 37.78 Pout_new = 2.12
+ Pin = 10.85
+ eff = 19.54
+DC = 72.20 currentIn = 0.76 currentOut = 0.04 VoltageIn = 14.08 VoltageOut = 37.69 Pout_new = 1.49
+ Pin = 10.74
+ eff = 13.89
+DC = 72.30 currentIn = 0.76 currentOut = 0.04 VoltageIn = 14.17 VoltageOut = 37.46 Pout_new = 1.45
+ Pin = 10.73
+ eff = 13.55
+DC = 72.40 currentIn = 0.76 currentOut = 0.04 VoltageIn = 14.08 VoltageOut = 37.42 Pout_new = 1.46
+ Pin = 10.67
+ eff = 13.70
+DC = 72.50 currentIn = 0.76 currentOut = 0.04 VoltageIn = 14.08 VoltageOut = 37.32 Pout_new = 1.65
+ Pin = 10.71
+ eff = 15.38
+DC = 72.40 currentIn = 0.77 currentOut = 0.04 VoltageIn = 14.08 VoltageOut = 37.23 Pout_new = 1.53
+ Pin = 10.87
+ eff = 14.11
+DC = 72.30 currentIn = 0.75 currentOut = 0.05 VoltageIn = 14.04 VoltageOut = 37.14 Pout_new = 1.70
+ Pin = 10.53
+ eff = 16.13
+DC = 72.40 currentIn = 0.75 currentOut = 0.04 VoltageIn = 13.95 VoltageOut = 37.14 Pout_new = 1.61
+ Pin = 10.44
+ eff = 15.41
+DC = 72.50 currentIn = 0.75 currentOut = 0.05 VoltageIn = 14.04 VoltageOut = 37.05 Pout_new = 1.72
+ Pin = 10.60
+ eff = 16.27
+DC = 72.40 currentIn = 0.75 currentOut = 0.05 VoltageIn = 13.95 VoltageOut = 37.10 Pout_new = 1.85
+ Pin = 10.51
+ eff = 17.64
+DC = 72.30 currentIn = 0.76 currentOut = 0.05 VoltageIn = 13.85 VoltageOut = 37.05 Pout_new = 1.73
+ Pin = 10.53
+ eff = 16.46
+DC = 72.20 currentIn = 0.75 currentOut = 0.05 VoltageIn = 13.90 VoltageOut = 37.05 Pout_new = 1.76
+ Pin = 10.36
+ eff = 17.02
+DC = 72.30 currentIn = 0.76 currentOut = 0.04 VoltageIn = 13.95 VoltageOut = 37.01 Pout_new = 1.36
+ Pin = 10.62
+ eff = 12.78
+DC = 72.20 currentIn = 0.75 currentOut = 0.04 VoltageIn = 13.99 VoltageOut = 37.01 Pout_new = 1.63
+ Pin = 10.51
+ eff = 15.53
+DC = 72.30 currentIn = 0.75 currentOut = 0.04 VoltageIn = 13.85 VoltageOut = 36.87 Pout_new = 1.32
+ Pin = 10.44
+ eff = 12.67
+DC = 72.40 currentIn = 0.75 currentOut = 0.04 VoltageIn = 13.85 VoltageOut = 36.91 Pout_new = 1.51
+ Pin = 10.44
+ eff = 14.47
+DC = 72.30 currentIn = 0.75 currentOut = 0.05 VoltageIn = 13.81 VoltageOut = 37.01 Pout_new = 1.83
+ Pin = 10.29
+ eff = 17.78
+DC = 72.20 currentIn = 0.77 currentOut = 0.04 VoltageIn = 13.81 VoltageOut = 37.01 Pout_new = 1.54
+ Pin = 10.58
+ eff = 14.60
+DC = 72.10 currentIn = 0.76 currentOut = 0.06 VoltageIn = 14.04 VoltageOut = 36.82 Pout_new = 2.07
+ Pin = 10.63
+ eff = 19.44
+DC = 72.00 currentIn = 0.75 currentOut = 0.05 VoltageIn = 14.13 VoltageOut = 37.01 Pout_new = 1.89
+ Pin = 10.66
+ eff = 17.71
+DC = 72.10 currentIn = 0.75 currentOut = 0.06 VoltageIn = 14.13 VoltageOut = 37.10 Pout_new = 2.07
+ Pin = 10.60
+ eff = 19.54
+DC = 72.00 currentIn = 0.76 currentOut = 0.06 VoltageIn = 14.08 VoltageOut = 37.19 Pout_new = 2.12
+ Pin = 10.76
+ eff = 19.66
+DC = 72.10 currentIn = 0.76 currentOut = 0.06 VoltageIn = 14.08 VoltageOut = 37.28 Pout_new = 2.10
+ Pin = 10.75
+ eff = 19.54
+DC = 72.00 currentIn = 0.75 currentOut = 0.06 VoltageIn = 14.17 VoltageOut = 37.19 Pout_new = 2.21
+ Pin = 10.67
+ eff = 20.76
+DC = 72.10 currentIn = 0.76 currentOut = 0.05 VoltageIn = 14.17 VoltageOut = 37.19 Pout_new = 2.01
+ Pin = 10.83
+ eff = 18.53
+DC = 72.00 currentIn = 0.76 currentOut = 0.06 VoltageIn = 14.17 VoltageOut = 37.19 Pout_new = 2.23
+ Pin = 10.80
+ eff = 20.68
+DC = 72.10 currentIn = 0.76 currentOut = 0.06 VoltageIn = 14.17 VoltageOut = 37.19 Pout_new = 2.19
+ Pin = 10.77
+ eff = 20.38
+DC = 72.20 currentIn = 0.76 currentOut = 0.04 VoltageIn = 14.04 VoltageOut = 37.23 Pout_new = 1.59
+ Pin = 10.67
+ eff = 14.93
+DC = 72.10 currentIn = 0.76 currentOut = 0.05 VoltageIn = 14.13 VoltageOut = 36.87 Pout_new = 1.78
+ Pin = 10.69
+ eff = 16.69
+DC = 72.00 currentIn = 0.76 currentOut = 0.05 VoltageIn = 14.13 VoltageOut = 36.96 Pout_new = 1.88
+ Pin = 10.79
+ eff = 17.39
+DC = 72.10 currentIn = 0.76 currentOut = 0.06 VoltageIn = 14.08 VoltageOut = 37.01 Pout_new = 2.27
+ Pin = 10.76
+ eff = 21.12
+DC = 72.00 currentIn = 0.76 currentOut = 0.05 VoltageIn = 13.99 VoltageOut = 37.05 Pout_new = 1.85
+ Pin = 10.62
+ eff = 17.43
+DC = 71.90 currentIn = 0.76 currentOut = 0.05 VoltageIn = 14.17 VoltageOut = 36.96 Pout_new = 1.96
+ Pin = 10.80
+ eff = 18.10
+DC = 71.80 currentIn = 0.77 currentOut = 0.06 VoltageIn = 14.13 VoltageOut = 37.01 Pout_new = 2.26
+ Pin = 10.92
+ eff = 20.73
+DC = 71.90 currentIn = 0.76 currentOut = 0.05 VoltageIn = 14.08 VoltageOut = 37.01 Pout_new = 2.01
+ Pin = 10.72
+ eff = 18.71
+DC = 72.00 currentIn = 0.76 currentOut = 0.06 VoltageIn = 14.04 VoltageOut = 36.96 Pout_new = 2.12
+ Pin = 10.74
+ eff = 19.76
+DC = 71.90 currentIn = 0.76 currentOut = 0.06 VoltageIn = 13.95 VoltageOut = 36.91 Pout_new = 2.14
+ Pin = 10.55
+ eff = 20.28
+DC = 72.00 currentIn = 0.76 currentOut = 0.06 VoltageIn = 14.13 VoltageOut = 36.91 Pout_new = 2.09
+ Pin = 10.73
+ eff = 19.48
+DC = 71.90 currentIn = 0.77 currentOut = 0.06 VoltageIn = 14.17 VoltageOut = 36.87 Pout_new = 2.22
+ Pin = 10.92
+ eff = 20.28
+DC = 71.80 currentIn = 0.77 currentOut = 0.06 VoltageIn = 13.99 VoltageOut = 36.87 Pout_new = 2.09
+ Pin = 10.73
+ eff = 19.45
+DC = 71.90 currentIn = 0.76 currentOut = 0.06 VoltageIn = 14.04 VoltageOut = 36.78 Pout_new = 2.07
+ Pin = 10.65
+ eff = 19.46
+DC = 72.00 currentIn = 0.77 currentOut = 0.06 VoltageIn = 14.13 VoltageOut = 36.78 Pout_new = 2.06
+ Pin = 10.90
+ eff = 18.93
+DC = 71.90 currentIn = 0.76 currentOut = 0.06 VoltageIn = 13.99 VoltageOut = 36.87 Pout_new = 2.31
+ Pin = 10.62
+ eff = 21.77
+DC = 71.80 currentIn = 0.76 currentOut = 0.05 VoltageIn = 14.13 VoltageOut = 36.82 Pout_new = 1.92
+ Pin = 10.78
+ eff = 17.80
+DC = 71.70 currentIn = 0.74 currentOut = 0.06 VoltageIn = 14.04 VoltageOut = 36.78 Pout_new = 2.37
+ Pin = 10.39
+ eff = 22.78
+DC = 71.80 currentIn = 0.77 currentOut = 0.06 VoltageIn = 14.13 VoltageOut = 37.05 Pout_new = 2.05
+ Pin = 10.84
+ eff = 18.90
+DC = 71.90 currentIn = 0.76 currentOut = 0.05 VoltageIn = 13.99 VoltageOut = 36.91 Pout_new = 1.84
+ Pin = 10.69
+ eff = 17.25
+DC = 72.00 currentIn = 0.77 currentOut = 0.05 VoltageIn = 14.13 VoltageOut = 36.82 Pout_new = 1.90
+ Pin = 10.88
+ eff = 17.46
+DC = 71.90 currentIn = 0.76 currentOut = 0.05 VoltageIn = 14.04 VoltageOut = 36.82 Pout_new = 1.91
+ Pin = 10.68
+ eff = 17.87
+DC = 72.00 currentIn = 0.76 currentOut = 0.06 VoltageIn = 13.95 VoltageOut = 36.73 Pout_new = 2.09
+ Pin = 10.61
+ eff = 19.69
+DC = 72.10 currentIn = 0.76 currentOut = 0.05 VoltageIn = 14.04 VoltageOut = 36.73 Pout_new = 1.78
+ Pin = 10.72
+ eff = 16.58
+DC = 72.00 currentIn = 0.78 currentOut = 0.06 VoltageIn = 13.99 VoltageOut = 36.69 Pout_new = 2.20
+ Pin = 10.85
+ eff = 20.31
+DC = 71.90 currentIn = 0.77 currentOut = 0.05 VoltageIn = 14.04 VoltageOut = 36.64 Pout_new = 1.94
+ Pin = 10.74
+ eff = 18.05
+DC = 72.00 currentIn = 0.76 currentOut = 0.05 VoltageIn = 14.08 VoltageOut = 36.55 Pout_new = 1.88
+ Pin = 10.71
+ eff = 17.60
+DC = 72.10 currentIn = 0.76 currentOut = 0.05 VoltageIn = 13.90 VoltageOut = 36.60 Pout_new = 2.00
+ Pin = 10.54
+ eff = 19.02
+DC = 72.00 currentIn = 0.76 currentOut = 0.06 VoltageIn = 13.99 VoltageOut = 36.64 Pout_new = 2.26
+ Pin = 10.67
+ eff = 21.17
+DC = 72.10 currentIn = 0.77 currentOut = 0.05 VoltageIn = 13.90 VoltageOut = 36.60 Pout_new = 1.81
+ Pin = 10.66
+ eff = 16.98
+DC = 72.20 currentIn = 0.77 currentOut = 0.04 VoltageIn = 13.85 VoltageOut = 36.64 Pout_new = 1.60
+ Pin = 10.61
+ eff = 15.06
+DC = 72.10 currentIn = 0.76 currentOut = 0.05 VoltageIn = 13.90 VoltageOut = 36.28 Pout_new = 1.80
+ Pin = 10.54
+ eff = 17.11
+DC = 72.20 currentIn = 0.76 currentOut = 0.05 VoltageIn = 13.95 VoltageOut = 36.37 Pout_new = 1.70
+ Pin = 10.63
+ eff = 16.01
+DC = 72.30 currentIn = 0.77 currentOut = 0.04 VoltageIn = 13.76 VoltageOut = 36.05 Pout_new = 1.46
+ Pin = 10.55
+ eff = 13.80
+DC = 72.40 currentIn = 0.76 currentOut = 0.04 VoltageIn = 13.76 VoltageOut = 36.09 Pout_new = 1.61
+ Pin = 10.50
+ eff = 15.35
+DC = 72.30 currentIn = 0.75 currentOut = 0.04 VoltageIn = 13.76 VoltageOut = 36.14 Pout_new = 1.42
+ Pin = 10.39
+ eff = 13.69
+DC = 72.20 currentIn = 0.76 currentOut = 0.05 VoltageIn = 13.76 VoltageOut = 35.96 Pout_new = 1.79
+ Pin = 10.44
+ eff = 17.13
+DC = 72.10 currentIn = 0.76 currentOut = 0.05 VoltageIn = 13.76 VoltageOut = 35.96 Pout_new = 1.84
+ Pin = 10.43
+ eff = 17.69
+DC = 72.20 currentIn = 0.76 currentOut = 0.04 VoltageIn = 13.72 VoltageOut = 36.09 Pout_new = 1.54
+ Pin = 10.41
+ eff = 14.75
+DC = 72.10 currentIn = 0.76 currentOut = 0.05 VoltageIn = 13.76 VoltageOut = 35.96 Pout_new = 1.79
+ Pin = 10.51
+ eff = 17.01
+DC = 72.00 currentIn = 0.76 currentOut = 0.05 VoltageIn = 13.81 VoltageOut = 36.18 Pout_new = 1.76
+ Pin = 10.47
+ eff = 16.81
+DC = 71.90 currentIn = 0.76 currentOut = 0.06 VoltageIn = 13.99 VoltageOut = 36.23 Pout_new = 2.00
+ Pin = 10.68
+ eff = 18.75
+DC = 72.00 currentIn = 0.76 currentOut = 0.05 VoltageIn = 13.99 VoltageOut = 36.32 Pout_new = 1.86
+ Pin = 10.69
+ eff = 17.44
+DC = 72.10 currentIn = 0.77 currentOut = 0.06 VoltageIn = 13.95 VoltageOut = 36.28 Pout_new = 2.05
+ Pin = 10.70
+ eff = 19.20
+DC = 72.00 currentIn = 0.77 currentOut = 0.05 VoltageIn = 13.99 VoltageOut = 36.28 Pout_new = 1.88
+ Pin = 10.75
+ eff = 17.48
+DC = 71.90 currentIn = 0.78 currentOut = 0.05 VoltageIn = 13.95 VoltageOut = 36.28 Pout_new = 1.97
+ Pin = 10.89
+ eff = 18.07
+DC = 71.80 currentIn = 0.77 currentOut = 0.05 VoltageIn = 13.90 VoltageOut = 36.28 Pout_new = 1.76
+ Pin = 10.64
+ eff = 16.58
+DC = 71.90 currentIn = 0.76 currentOut = 0.05 VoltageIn = 13.85 VoltageOut = 36.23 Pout_new = 1.94
+ Pin = 10.55
+ eff = 18.36
+DC = 72.00 currentIn = 0.77 currentOut = 0.05 VoltageIn = 13.85 VoltageOut = 36.23 Pout_new = 1.86
+ Pin = 10.71
+ eff = 17.36
+DC = 71.90 currentIn = 0.76 currentOut = 0.06 VoltageIn = 13.85 VoltageOut = 36.23 Pout_new = 2.03
+ Pin = 10.51
+ eff = 19.34
+DC = 72.00 currentIn = 0.76 currentOut = 0.05 VoltageIn = 13.85 VoltageOut = 36.28 Pout_new = 1.97
+ Pin = 10.55
+ eff = 18.65
+DC = 72.10 currentIn = 0.77 currentOut = 0.05 VoltageIn = 13.95 VoltageOut = 36.23 Pout_new = 1.92
+ Pin = 10.73
+ eff = 17.85
+DC = 72.00 currentIn = 0.77 currentOut = 0.05 VoltageIn = 13.90 VoltageOut = 36.18 Pout_new = 1.87
+ Pin = 10.69
+ eff = 17.45
+DC = 72.10 currentIn = 0.77 currentOut = 0.05 VoltageIn = 13.95 VoltageOut = 36.23 Pout_new = 1.87
+ Pin = 10.79
+ eff = 17.31
+DC = 72.20 currentIn = 0.77 currentOut = 0.05 VoltageIn = 13.99 VoltageOut = 36.32 Pout_new = 1.72
+ Pin = 10.78
+ eff = 15.94
+DC = 72.10 currentIn = 0.77 currentOut = 0.06 VoltageIn = 13.81 VoltageOut = 35.96 Pout_new = 2.02
+ Pin = 10.63
+ eff = 18.98
+DC = 72.20 currentIn = 0.77 currentOut = 0.04 VoltageIn = 13.72 VoltageOut = 36.00 Pout_new = 1.35
+ Pin = 10.50
+ eff = 12.85
+DC = 72.10 currentIn = 0.76 currentOut = 0.06 VoltageIn = 13.76 VoltageOut = 35.77 Pout_new = 2.03
+ Pin = 10.42
+ eff = 19.44
+DC = 72.20 currentIn = 0.76 currentOut = 0.04 VoltageIn = 13.72 VoltageOut = 35.96 Pout_new = 1.40
+ Pin = 10.37
+ eff = 13.54
+DC = 72.10 currentIn = 0.76 currentOut = 0.05 VoltageIn = 13.76 VoltageOut = 35.82 Pout_new = 1.89
+ Pin = 10.42
+ eff = 18.09
+DC = 72.00 currentIn = 0.76 currentOut = 0.05 VoltageIn = 13.81 VoltageOut = 35.96 Pout_new = 1.78
+ Pin = 10.53
+ eff = 16.88
+DC = 72.10 currentIn = 0.76 currentOut = 0.05 VoltageIn = 13.76 VoltageOut = 35.91 Pout_new = 1.78
+ Pin = 10.44
+ eff = 17.01
+DC = 72.20 currentIn = 0.77 currentOut = 0.05 VoltageIn = 13.85 VoltageOut = 35.91 Pout_new = 1.73
+ Pin = 10.70
+ eff = 16.15
+DC = 72.10 currentIn = 0.77 currentOut = 0.05 VoltageIn = 13.76 VoltageOut = 35.73 Pout_new = 1.86
+ Pin = 10.61
+ eff = 17.55
+DC = 72.20 currentIn = 0.76 currentOut = 0.04 VoltageIn = 13.72 VoltageOut = 35.82 Pout_new = 1.60
+ Pin = 10.49
+ eff = 15.24
+DC = 72.10 currentIn = 0.76 currentOut = 0.05 VoltageIn = 13.76 VoltageOut = 35.77 Pout_new = 1.88
+ Pin = 10.47
+ eff = 17.99
+DC = 72.20 currentIn = 0.76 currentOut = 0.04 VoltageIn = 13.67 VoltageOut = 35.87 Pout_new = 1.53
+ Pin = 10.43
+ eff = 14.71
+DC = 72.10 currentIn = 0.76 currentOut = 0.06 VoltageIn = 13.76 VoltageOut = 35.73 Pout_new = 2.00
+ Pin = 10.44
+ eff = 19.19
+DC = 72.00 currentIn = 0.77 currentOut = 0.05 VoltageIn = 13.72 VoltageOut = 35.73 Pout_new = 1.82
+ Pin = 10.50
+ eff = 17.36
+DC = 71.90 currentIn = 0.77 currentOut = 0.06 VoltageIn = 13.90 VoltageOut = 35.87 Pout_new = 2.02
+ Pin = 10.73
+ eff = 18.84
+DC = 72.00 currentIn = 0.77 currentOut = 0.05 VoltageIn = 13.81 VoltageOut = 35.96 Pout_new = 1.93
+ Pin = 10.69
+ eff = 18.07
+DC = 71.90 currentIn = 0.77 currentOut = 0.05 VoltageIn = 13.85 VoltageOut = 35.91 Pout_new = 1.89
+ Pin = 10.63
+ eff = 17.79
+DC = 72.00 currentIn = 0.77 currentOut = 0.05 VoltageIn = 13.90 VoltageOut = 35.87 Pout_new = 1.95
+ Pin = 10.76
+ eff = 18.07
+DC = 71.90 currentIn = 0.78 currentOut = 0.06 VoltageIn = 13.81 VoltageOut = 35.87 Pout_new = 2.13
+ Pin = 10.71
+ eff = 19.85
+DC = 72.00 currentIn = 0.77 currentOut = 0.05 VoltageIn = 13.85 VoltageOut = 35.77 Pout_new = 1.94
+ Pin = 10.63
+ eff = 18.25
+DC = 72.10 currentIn = 0.76 currentOut = 0.06 VoltageIn = 13.81 VoltageOut = 35.87 Pout_new = 1.99
+ Pin = 10.55
+ eff = 18.89
+DC = 72.00 currentIn = 0.77 currentOut = 0.06 VoltageIn = 13.81 VoltageOut = 35.87 Pout_new = 2.01
+ Pin = 10.66
+ eff = 18.88
+DC = 71.90 currentIn = 0.77 currentOut = 0.06 VoltageIn = 13.81 VoltageOut = 35.87 Pout_new = 1.97
+ Pin = 10.62
+ eff = 18.59
+DC = 72.00 currentIn = 0.77 currentOut = 0.06 VoltageIn = 13.90 VoltageOut = 35.82 Pout_new = 2.01
+ Pin = 10.70
+ eff = 18.79
+DC = 71.90 currentIn = 0.77 currentOut = 0.05 VoltageIn = 13.81 VoltageOut = 35.77 Pout_new = 1.84
+ Pin = 10.60
+ eff = 17.32
+DC = 72.00 currentIn = 0.77 currentOut = 0.05 VoltageIn = 13.81 VoltageOut = 35.77 Pout_new = 1.81
+ Pin = 10.59
+ eff = 17.06
+DC = 72.10 currentIn = 0.76 currentOut = 0.06 VoltageIn = 13.85 VoltageOut = 35.77 Pout_new = 2.05
+ Pin = 10.52
+ eff = 19.53
+DC = 72.20 currentIn = 0.77 currentOut = 0.04 VoltageIn = 13.76 VoltageOut = 35.82 Pout_new = 1.38
+ Pin = 10.59
+ eff = 13.04
+DC = 72.30 currentIn = 0.77 currentOut = 0.04 VoltageIn = 13.72 VoltageOut = 35.64 Pout_new = 1.45
+ Pin = 10.60
+ eff = 13.67
+DC = 72.20 currentIn = 0.76 currentOut = 0.04 VoltageIn = 13.63 VoltageOut = 35.59 Pout_new = 1.38
+ Pin = 10.41
+ eff = 13.27
+DC = 72.30 currentIn = 0.76 currentOut = 0.04 VoltageIn = 13.49 VoltageOut = 35.27 Pout_new = 1.46
+ Pin = 10.31
+ eff = 14.18
+DC = 72.40 currentIn = 0.76 currentOut = 0.05 VoltageIn = 13.63 VoltageOut = 35.36 Pout_new = 1.65
+ Pin = 10.34
+ eff = 15.91
+DC = 72.50 currentIn = 0.76 currentOut = 0.04 VoltageIn = 13.44 VoltageOut = 35.27 Pout_new = 1.36
+ Pin = 10.19
+ eff = 13.34
+DC = 72.60 currentIn = 0.76 currentOut = 0.02 VoltageIn = 13.54 VoltageOut = 35.36 Pout_new = 0.71
+ Pin = 10.25
+ eff = 6.96
+DC = 72.70 currentIn = 0.74 currentOut = 0.02 VoltageIn = 13.44 VoltageOut = 35.14 Pout_new = 0.68
+ Pin = 10.01
+ eff = 6.81
