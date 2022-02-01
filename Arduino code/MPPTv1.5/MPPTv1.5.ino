@@ -22,14 +22,17 @@ float Vout_R2 = 1200;
 
 // Other global variables that can be changed //
 float resolution = 5.0/1024; // resolution of the ADC of the microcontroller/microcomputer
-float STEP_SIZE = 1; // step size (= precision) of the MPPT algorithm
+float STEP_SIZE = 0.1; // step size (= precision) of the MPPT algorithm
 float MAX_VOLTAGE = 30.0;
 float MIN_VOLTAGE = 10.0;
 
 // Other global variables that cannot be changed //
 float zeroPointIn; // zero point of the current sensor before the boost converter
 float zeroPointOut; // zero point of the current sensor after the boost converter
-float DC = 50; // GLOBAL DC VARIABLE
+float DC; // GLOBAL DC VARIABLE
+
+float Vout_old;
+float Pout_old;
 
 void setup() {
   Serial.begin(9600);
@@ -107,19 +110,25 @@ void loop() {
   ///** Obtain the needed duty cycle for the boost converter using the perturb and observe algortihm **///
   perturbAndObserve(voltageIn, voltageOut, currentIn, currentOut); // THIS IS A PERCENTAGE!
     ///** Set the duty cycle of the boost converter to the desired frequency **///
-  if (DC >= 20 && DC <= 80) {
+   if (DC <= 20)
+    {
+    DC = 30;
     analogWrite(PWMPin, (DC/100 * 255));
-  }
-  else {
-    analogWrite(PWMPin, (30/100 * 255));
-  }
+    }
+  else if(DC >= 80) 
+    {
+    DC = 70;
+    analogWrite(PWMPin, (DC/100 * 255));
+    }
+  else
+    {
+    analogWrite(PWMPin, (DC/100 * 255));
+    }
   Serial.print("DC = ");
   Serial.print(DC);
   Serial.println(" [%]");
 
-
-
-  delay(500);
+  delay(20000);
 
 }
 
@@ -141,28 +150,37 @@ float get_voltage(int n_datapoints, const byte pin)
 ///* MPPT perturb and observe algorithm *///
 void perturbAndObserve(float Vin, float Vout_new, float Iin, float Iout) {
     float eff;
-    float Vout_old;
-    float Pout_old;
     
     float Pout_new = Vout_new*Iout;
     float Pin = Vin * Iin;
+
+    Serial.print("Pout_new = ");
+    Serial.println(Pout_new);
+    Serial.print("Pin = ");
+    Serial.println(Pin);
+
+    //** SOME SAFETY CHECKS THAT MAY OVERWRITE THE FINAL VALUE FOR DC **//
+    if(Vout_new >= MAX_VOLTAGE)
+    {
+      DC = DC - 2*STEP_SIZE;
+      Serial.println("MAX VOLTAGE REACHED!!");
+      return 0;
+    }
+    if(Vout_new <= MIN_VOLTAGE)
+    {
+      DC = DC + 2*STEP_SIZE;
+      Serial.println("MIN VOLTAGE REACHED!!");
+      return 0;
+    }
     
-    if(Pout_new >= Pout_old*0.99 || Pout_new <= Pout_old*1.01)
-        {
-           eff = (Pout_new/Pin) *100;
-           Serial.print("eff: ");
-           Serial.print(eff);
-           Serial.println(" [%]");
-        return 0;
-        }
-        else if (Pout_new > Pout_old)
+        if (Pout_new > Pout_old)
         {
             if(Vout_new > Vout_old)
             {
                 DC = DC + STEP_SIZE;
             }else
             {
-                DC = DC- STEP_SIZE;
+                DC = DC - STEP_SIZE;
             }
         }else
         {
@@ -174,9 +192,7 @@ void perturbAndObserve(float Vin, float Vout_new, float Iin, float Iout) {
                 DC = DC + STEP_SIZE;
             }
         }
-   
-//    Serial.print("DC:");
-//    Serial.println(DC);
+  
    
     eff = (Pout_new/Pin) *100;
     Serial.print("eff: ");
@@ -185,18 +201,6 @@ void perturbAndObserve(float Vin, float Vout_new, float Iin, float Iout) {
     
     Vout_old = Vout_new;
     Pout_old = Pout_new;
-
-    //** SOME SAFETY CHECKS THAT MAY OVERWRITE THE FINAL VALUE FOR DC **//
-    if(Vout_new >= MAX_VOLTAGE)
-    {
-      DC = DC - 2*STEP_SIZE;
-      Serial.println("MAX VOLTAGE REACHED!!");
-    }
-//  if(Vout_new <= MIN_VOLTAGE)
-//  {
-//    DC = DC + 2*STEP_SIZE;
-//    Serial.println("MIN VOLTAGE REACHED!!");
-//  }
 
     return 0;
 }
