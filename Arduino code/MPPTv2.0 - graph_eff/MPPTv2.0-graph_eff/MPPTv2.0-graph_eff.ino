@@ -15,10 +15,10 @@ float resolutionIn = 0.1838966;
 float resolutionOut = 0.1836130;
 
 // Voltage devider values //
-float Vin_R1 = 9950.6;
-float Vin_R2 = 1193.0;
-float Vout_R1 = 9946.6;
-float Vout_R2 = 1194.1;
+float Vin_R1 = 10000;
+float Vin_R2 = 1200;
+float Vout_R1 = 10000;
+float Vout_R2 = 1200;
 
 // Other global variables that can be changed //
 float resolution = 5.0/1024; // resolution of the ADC of the microcontroller/microcomputer
@@ -30,6 +30,7 @@ float MIN_VOLTAGE = 10.0;
 float zeroPointIn; // zero point of the current sensor before the boost converter
 float zeroPointOut; // zero point of the current sensor after the boost converter
 float DC; // GLOBAL DC VARIABLE
+
 float Vin_old;
 float Vout_old;
 float Pout_old;
@@ -45,11 +46,11 @@ void setup() {
   // This calibration assumes that the resolution of the ACS712 stays the same, but the voltage readout for 0 [A] fluctuates //
   // To calibrate, make sure that the script initializes with 0 [A] on the sensor //
   zeroPointIn = get_voltage(10000, locationCurrentIn);
-  Serial.print("Zero point IN = ");
-  Serial.println(zeroPointIn);
+Serial.print("Zero point IN = ");
+Serial.println(zeroPointIn);
   zeroPointOut = get_voltage(10000, locationCurrentOut);
-  Serial.print("Zero point OUT = ");
-  Serial.println(zeroPointOut);
+Serial.print("Zero point OUT = ");
+Serial.println(zeroPointOut);
 }
 
 
@@ -76,7 +77,8 @@ void loop() {
   currentIn = ((sensorVoltage - zeroPointIn)/resolutionIn);
   Serial.print("currentIn = ");
   Serial.print(currentIn);
-  Serial.println(" [A]");
+  Serial.print(" ");
+//  Serial.println(" [A]");
 
   ///** CURRENT OUT **///
   // ask for an average sensor voltage of 100 measurments
@@ -87,9 +89,10 @@ void loop() {
   //Serial.println(sensorVoltage ,3);
 
   currentOut = ((sensorVoltage - zeroPointOut)/resolutionOut);
-  Serial.print("currentOut = ");
-  Serial.print(currentOut);  
-  Serial.println(" [A]");
+ Serial.print("currentOut = ");
+  Serial.print(currentOut); 
+  Serial.print(" "); 
+//  Serial.println(" [A]");
 
   ///** VOLTAGES **///
   // read  voltage from analog pins
@@ -101,33 +104,36 @@ void loop() {
   voltageOut = VoutRead * (resolution)*((Vout_R1 + Vout_R2)/Vout_R2);
 
   // print voltages
-  Serial.print("VoltageIn = ");
-  Serial.print(voltageIn);
-  Serial.println(" [V]");
-  Serial.print("VoltageOut = ");
-  Serial.print(voltageOut);
-  Serial.println(" [V]");
+ Serial.print("VoltageIn = ");
+Serial.print(voltageIn);
+Serial.print(" ");
+//  Serial.println(" [V]");
+ Serial.print("VoltageOut = ");
+ Serial.print(voltageOut);
+ Serial.print(" ");
+//  Serial.println(" [V]");
 
   ///** Obtain the needed duty cycle for the boost converter using the perturb and observe algortihm **///
   perturbAndObserve(voltageIn, voltageOut, currentIn, currentOut); // THIS IS A PERCENTAGE!
     ///** Set the duty cycle of the boost converter to the desired frequency **///
-   if (DC < 20)
+   if (DC <= 20)
     {
-    DC = 20;
+    DC = 30;
     analogWrite(PWMPin, (DC/100 * 255));
     }
-  else if(DC > 80) 
+  else if(DC >= 80) 
     {
-    DC = 80;
+    DC = 70;
     analogWrite(PWMPin, (DC/100 * 255));
     }
   else
     {
     analogWrite(PWMPin, (DC/100 * 255));
     }
-  Serial.print("DC = ");
+Serial.print("DC = ");
   Serial.print(DC);
-  Serial.println(" [%]");
+  Serial.print(" ");
+//  Serial.println(" [%]");
 
   //delay(20000);
 
@@ -157,21 +163,23 @@ void perturbAndObserve(float Vin_new, float Vout_new, float Iin, float Iout)
     float Pin_new = Vin_new *Iin;
 
     Serial.print("Pout_new = ");
-    Serial.println(Pout_new);
-    Serial.print("Pin = ");
-    Serial.println(Pin_new);
+   Serial.print(Pout_new);
+   Serial.print(" ");
+   Serial.print("Pin = ");
+   Serial.print(Pin_new);
+   Serial.print(" ");
 
     //** SOME SAFETY CHECKS THAT MAY OVERWRITE THE FINAL VALUE FOR DC **//
     if(Vout_new >= MAX_VOLTAGE)
     {
       DC = DC - 10*STEP_SIZE;
-      Serial.println("MAX VOLTAGE REACHED!!");
+    //  Serial.println("MAX VOLTAGE REACHED!!");
       return 0;
     }
     if(Vout_new <= MIN_VOLTAGE)
     {
       DC = DC + 10*STEP_SIZE;
-      Serial.println("MIN VOLTAGE REACHED!!");
+  //    Serial.println("MIN VOLTAGE REACHED!!");
       return 0;
     }
     
@@ -197,9 +205,9 @@ void perturbAndObserve(float Vin_new, float Vout_new, float Iin, float Iout)
   
    
     eff = (Pout_new/Pin_new) *100;
-    Serial.print("eff: ");
-    Serial.print(eff);
-    Serial.println(" [%]");
+    Serial.print("eff = ");
+   Serial.println(eff);
+ //   Serial.println(" [%]");
   
     Vin_old = Vin_new;
     Vout_old = Vout_new;

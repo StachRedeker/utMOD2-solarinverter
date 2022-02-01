@@ -24,7 +24,7 @@ float Vout_R2 = 1194.1;
 float resolution = 5.0/1024; // resolution of the ADC of the microcontroller/microcomputer
 float STEP_SIZE = 0.1; // step size (= precision) of the MPPT algorithm
 float MAX_VOLTAGE = 45.0;
-float MIN_VOLTAGE = 10.0;
+float MIN_VOLTAGE = 25.0;
 
 // Other global variables that cannot be changed //
 float zeroPointIn; // zero point of the current sensor before the boost converter
@@ -45,11 +45,11 @@ void setup() {
   // This calibration assumes that the resolution of the ACS712 stays the same, but the voltage readout for 0 [A] fluctuates //
   // To calibrate, make sure that the script initializes with 0 [A] on the sensor //
   zeroPointIn = get_voltage(10000, locationCurrentIn);
-  Serial.print("Zero point IN = ");
-  Serial.println(zeroPointIn);
+Serial.print("Zero point IN = ");
+Serial.println(zeroPointIn);
   zeroPointOut = get_voltage(10000, locationCurrentOut);
-  Serial.print("Zero point OUT = ");
-  Serial.println(zeroPointOut);
+Serial.print("Zero point OUT = ");
+Serial.println(zeroPointOut);
 }
 
 
@@ -74,9 +74,10 @@ void loop() {
   //Serial.println(sensorVoltage ,3);
 
   currentIn = ((sensorVoltage - zeroPointIn)/resolutionIn);
-  Serial.print("currentIn = ");
+//  Serial.print("currentIn = ");
   Serial.print(currentIn);
-  Serial.println(" [A]");
+  Serial.print(" ");
+//  Serial.println(" [A]");
 
   ///** CURRENT OUT **///
   // ask for an average sensor voltage of 100 measurments
@@ -87,9 +88,10 @@ void loop() {
   //Serial.println(sensorVoltage ,3);
 
   currentOut = ((sensorVoltage - zeroPointOut)/resolutionOut);
-  Serial.print("currentOut = ");
-  Serial.print(currentOut);  
-  Serial.println(" [A]");
+// Serial.print("currentOut = ");
+  Serial.print(currentOut); 
+  Serial.print(" "); 
+//  Serial.println(" [A]");
 
   ///** VOLTAGES **///
   // read  voltage from analog pins
@@ -101,12 +103,14 @@ void loop() {
   voltageOut = VoutRead * (resolution)*((Vout_R1 + Vout_R2)/Vout_R2);
 
   // print voltages
-  Serial.print("VoltageIn = ");
-  Serial.print(voltageIn);
-  Serial.println(" [V]");
-  Serial.print("VoltageOut = ");
-  Serial.print(voltageOut);
-  Serial.println(" [V]");
+// Serial.print("VoltageIn = ");
+Serial.print(voltageIn);
+Serial.print(" ");
+//  Serial.println(" [V]");
+// Serial.print("VoltageOut = ");
+ Serial.print(voltageOut);
+ Serial.print(" ");
+//  Serial.println(" [V]");
 
   ///** Obtain the needed duty cycle for the boost converter using the perturb and observe algortihm **///
   perturbAndObserve(voltageIn, voltageOut, currentIn, currentOut); // THIS IS A PERCENTAGE!
@@ -125,9 +129,10 @@ void loop() {
     {
     analogWrite(PWMPin, (DC/100 * 255));
     }
-  Serial.print("DC = ");
+//Serial.print("DC = ");
   Serial.print(DC);
-  Serial.println(" [%]");
+  Serial.print(" ");
+//  Serial.println(" [%]");
 
   //delay(20000);
 
@@ -156,22 +161,26 @@ void perturbAndObserve(float Vin_new, float Vout_new, float Iin, float Iout)
     float Pout_new = Vout_new*Iout;
     float Pin_new = Vin_new *Iin;
 
-    Serial.print("Pout_new = ");
-    Serial.println(Pout_new);
-    Serial.print("Pin = ");
-    Serial.println(Pin_new);
+ //   Serial.print("Pout_new = ");
+   Serial.print(Pout_new);
+   Serial.print(" ");
+//   Serial.print("Pin = ");
+   Serial.print(Pin_new);
+   Serial.print(" ");
 
     //** SOME SAFETY CHECKS THAT MAY OVERWRITE THE FINAL VALUE FOR DC **//
     if(Vout_new >= MAX_VOLTAGE)
     {
       DC = DC - 10*STEP_SIZE;
-      Serial.println("MAX VOLTAGE REACHED!!");
+    //  Serial.println("MAX VOLTAGE REACHED!!");
+    Serial.println("");
       return 0;
     }
     if(Vout_new <= MIN_VOLTAGE)
     {
       DC = DC + 10*STEP_SIZE;
-      Serial.println("MIN VOLTAGE REACHED!!");
+  //    Serial.println("MIN VOLTAGE REACHED!!");
+  Serial.println("");
       return 0;
     }
     
@@ -197,9 +206,9 @@ void perturbAndObserve(float Vin_new, float Vout_new, float Iin, float Iout)
   
    
     eff = (Pout_new/Pin_new) *100;
-    Serial.print("eff: ");
-    Serial.print(eff);
-    Serial.println(" [%]");
+ //   Serial.print("eff = ");
+   Serial.println(eff);
+ //   Serial.println(" [%]");
   
     Vin_old = Vin_new;
     Vout_old = Vout_new;
