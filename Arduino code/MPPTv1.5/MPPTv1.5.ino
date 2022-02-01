@@ -31,8 +31,10 @@ float zeroPointIn; // zero point of the current sensor before the boost converte
 float zeroPointOut; // zero point of the current sensor after the boost converter
 float DC; // GLOBAL DC VARIABLE
 
+float Vin_old;
 float Vout_old;
 float Pout_old;
+float Pin_old;
 
 void setup() {
   Serial.begin(9600);
@@ -148,16 +150,16 @@ float get_voltage(int n_datapoints, const byte pin)
 }
 
 ///* MPPT perturb and observe algorithm *///
-void perturbAndObserve(float Vin, float Vout_new, float Iin, float Iout) {
+void perturbAndObserve(float Vin_new, float Vout, float Iin, float Iout) {
     float eff;
     
     float Pout_new = Vout_new*Iout;
-    float Pin = Vin * Iin;
+    float Pin_new = Vin_new *Iin;
 
     Serial.print("Pout_new = ");
     Serial.println(Pout_new);
     Serial.print("Pin = ");
-    Serial.println(Pin);
+    Serial.println(Pin_new);
 
     //** SOME SAFETY CHECKS THAT MAY OVERWRITE THE FINAL VALUE FOR DC **//
     if(Vout_new >= MAX_VOLTAGE)
@@ -173,7 +175,7 @@ void perturbAndObserve(float Vin, float Vout_new, float Iin, float Iout) {
       return 0;
     }
     
-        if (Pout_new > Pout_old)
+        if (Pin_new > Pin_old)
         {
             if(Vout_new > Vout_old)
             {
@@ -184,7 +186,7 @@ void perturbAndObserve(float Vin, float Vout_new, float Iin, float Iout) {
             }
         }else
         {
-            if(Vout_new > Vout_old)
+            if(Vout_new < Vout_old)
             {
                 DC = DC - STEP_SIZE;
             }else
@@ -198,9 +200,11 @@ void perturbAndObserve(float Vin, float Vout_new, float Iin, float Iout) {
     Serial.print("eff: ");
     Serial.print(eff);
     Serial.println(" [%]");
-    
+  
+    Vin_old = Vin_new;
     Vout_old = Vout_new;
     Pout_old = Pout_new;
-
-    return 0;
+    Pin_old = Pin_new;
+    
+  return 0;
 }
