@@ -37,11 +37,11 @@ void loop(){
     val = (analogRead(PC0)*3.3/1024); // PA0 => A0
     if(variable == 1){
         MyTim2->setCaptureCompare(channel2, 50, PERCENT_COMPARE_FORMAT);
-        delay(0.000055);
+        delay(0.000055); // delay used to correctly math the phase after using the inverting IC, since it applies a delay at inverting the signal
         MyTim1->setCaptureCompare(channel1, 50, PERCENT_COMPARE_FORMAT);
     }else{
         MyTim2->setCaptureCompare(channel2, 0, PERCENT_COMPARE_FORMAT); 
-        delay(0.0002);
+        delay(0.0002); // delay used to correctly math the phase after using the inverting IC, since it applies a delay at inverting the signal
         MyTim1->setCaptureCompare(channel1, 0, PERCENT_COMPARE_FORMAT);
     }
 }
